@@ -1,0 +1,25 @@
+{
+  "name": "angular-nice-bar",
+  "homepage": "https://github.com/forsigner/angular-nice-bar",
+  "description": "A nice and lightweight scrollbar in Angular",
+  "main": [
+    "dist/js/angular-nice-bar.js",
+    "dist/css/angular-nice-bar.css"
+    ],
+  "keywords": [
+    "nice-bar",
+    "scrollbar",
+    "angular"
+  ],
+  "authors": [
+    "forsigner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,235 @@
+body{
+    background-color: #f7f7f7;
+    height:100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-width: 320px;
+    background: #FFFFFF;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4285em;
+    color: #546E7A;
+}
+
+.digiwin-layout-content{
+    height: 100%;
+    /*overflow: auto;*/
+    position: relative;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+}
+.digiwin-header-row{
+    height: 56px;
+    min-height: 56px;
+    flex: 0 0 56px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    top: 0px;
+    position: fixed;
+    left: 0px;
+    bottom: auto;
+    right:auto;
+    z-index: 2;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+    /*background-color: white;*/
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#008595+0,97bec6+100 */
+    background-color: #1976D2; /* Old browsers */
+
+    color:white;
+    box-sizing: border-box;
+}
+.digiwin-header-row .digiwin-icons{
+    width: 40px;
+    height: 40px;
+}
+.digiwin-header-row .header-logo{
+    background-image: url("../images/logo.png");
+    background-size: cover;
+    height: 56px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px
+}
+.digiwin-header-row .header-login{
+    position: absolute;
+    right: 60px;
+    cursor:pointer;
+}
+.digiwin-layout-main-content{
+    top:56px;
+    height: calc(100% - 56px);
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    /*overflow: auto;*/
+}
+.digiwin-layout-page{
+    box-sizing: border-box;
+    overflow: auto;
+    padding:16px;
+}
+.digiwin-layout-footer{
+    position: absolute;
+    bottom: 16px;
+    right: 12px;
+
+    display: flex;
+    flex-direction: column;
+}
+.logo-font{
+    display: inline-block;
+    padding-top: 16px;
+    font-size: 30px;
+}
+.digiwin-side-btn{
+    position: absolute;
+    box-sizing: border-box;
+    cursor: pointer;
+    top:0px;
+}
+.digiwin-side-btn.left{
+    left:0px;
+}
+.digiwin-header-row .digiwin-side-btn .material-icons{
+    font-size: 56px;
+}
+.l-left{
+    float: left;
+
+}
+.nav-li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.nav-ul{
+    flex:0.7;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-a{
+    line-height: 56px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    background: none;
+    border-radius: 0;
+    position: relative;
+    letter-spacing: 0.16px;
+    margin: 0;
+    /*transition: all .3s;*/
+}
+
+    .nav-a:active {    
+       text-decoration: none;
+    }
+    .nav-a:visited {
+     color: #fff;
+     background: rgba(24,113,241,0.5);
+     text-decoration:none; 
+    
+    }
+.nav-a:focus{
+    text-decoration:none; 
+    
+}
+.nav-a:hover{
+    background: rgba(24,113,241,0.5);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.scrollme {
+    max-height: 580px;
+
+}
+.imgDiv{
+    max-width: 950px;
+}
+.logout{
+    background-image: url('../images/logoout.png');
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom:5%;
+    left: 5%;
+    z-index: 99!important;
+
+}
+.logout:hover{
+    cursor:pointer;
+}
+.digiwin-list{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.digiwin-list-header{
+    display: flex;
+    height: 30px;
+    min-height: 30px;
+    margin: 6px 0px;
+    align-items: center;
+}
+.digiwin-list-header-train{
+    display: flex;
+    height: 30px;
+    font-size:12px;
+    text-indent:2em;
+    min-height: 30px;
+    margin: 6px 0px;
+    align-items: center;
+}
+.digiwin-list-header .digiwin-list-header-column{
+    padding: 8px 0px;
+    box-sizing: border-box;
+}
+.digiwin-list-content{
+    display: flex;
+    height: 400px;
+    overflow: hidden;
+    padding: 0 4px;
+    flex: 1;
+}
+.digiwin-list-row{
+    display: flex;
+    height: 32px;
+    background-color: white;
+    border-radius: 4px;
+    margin: 8px 0px 0 0;
+    align-items: center;
+    position: relative;
+    flex: 0 0 32px;
+}
+.digiwin-list-row-train {
+    display: flex;
+    text-indent:2em;
+    height: 32px;
+    background-color: #e0eefd;
+    border-radius: 4px;
+    margin: 8px 0px 0 0;
+    align-items: center;
+    position: relative;
+    flex: 0 0 32px;
+
+}
+
+
+.listBack.leftnav {
+    width:30%;
+}

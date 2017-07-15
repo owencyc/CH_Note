@@ -1,0 +1,50 @@
+<div class="loginbody">
+    <div class="loginform">
+        <!--<fieldset>-->
+            <!--<legend>用户登陆</legend>-->
+
+            <div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <h2 class="ui image header " style="color:#ffffff">
+                        <div class="content">
+                            登入系统
+                        </div>
+                    </h2>
+                    <div class="ui large form">
+                        <div class="">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="user_no" placeholder="UserNo" ng-model="user_no">                                 
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="Password" ng-model="password">
+                                </div>
+                            </div>
+                            <div class="ui fluid large primary submit button" ng-click="login()">Login</div>
+                        </div>
+
+                        <!--<div class="ui error message"></div>-->
+
+                    </div>
+
+                    <div class="ui message">
+                        Tip:新人入职？请联系部门主管开通账号！
+                    </div>
+                    <span id="error1" style="color:red"></span>
+                    <span id="error2" style="color:red"></span>
+                </div>
+            </div>
+
+        <!--</fieldset>-->
+    </div>
+   
+    <h2 class="ui header login_logo">
+        <img class="ui image" src="images/digiwin.png">
+        <div class="content">鼎捷新人培训系统 </div>
+    </h2>
+</div>
+

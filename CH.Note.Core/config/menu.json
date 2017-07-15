@@ -1,0 +1,20 @@
+[
+
+  {
+    "name":"入职必读",
+    "icon":"red massive book icon",
+    "uri":"mustread",
+    "auth":"1"
+  },
+  {
+    "name":"系统培训",
+    "icon":"blue massive student icon",
+    "uri":"course",
+    "auth":"1"
+  },
+  {
+    "name":"信息维护",
+    "icon":"orange massive add user icon",
+    "uri":"manage",
+    "auth":"2"
+  }]
