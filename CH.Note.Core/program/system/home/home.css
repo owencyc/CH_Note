@@ -1,3 +1,60 @@
+.home-container{
+    background-color: #F7EED6;
+}
+.home-bar{
+    background-color: #F7EED6;
+    box-shadow: 0px 3px 1px #888888;
+}
+.home-button{
+    background-color: #F7EED6!important;
+}
 .home_title{
     text-align: center;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.card-row{
+    padding:1%;
+    width: 100%;
+}
+.card-single{
+    border: 1px solid #bababc;
+    border-radius: 5%;
+    padding: 1%;
+    margin: 1%;
+    width:48%;
+    position: relative;
+}
+.card-single .extra{
+    position: absolute;
+    bottom: 0;
+}
+.card_yellow{
+    background-color: #FFD700;
+}
+.card_blue{
+    background-color: #A4D3EE;
+}
+.card_red{
+    background-color: #EE6363;
+}
+.card_gray{
+    background-color: #E3E3E3;
+}
+.card_green{
+    background-color: #B4EEB4;
+}
+.icon-note-add{
+    position: fixed;
+    right: 8%;
+    bottom:5%
+}
+.parkScroll{
+    height: 100%;
+
 }

@@ -1,10 +1,10 @@
 [
   {
-    "name"        :"mustread",
-    "url"          : "/mustread",
+    "name"        :"newnote",
+    "url"          : "/newnote",
     "params"       : {},
-    "templateUrl"  : "program/tips/mustread.html",
-    "controllerUrl": "program/tips/mustread.js",
-    "css"          : "program/tips/mustread.css"
+    "templateUrl"  : "program/system/note/note.html",
+    "controllerUrl": "program/system/note/note.js",
+    "css"          : "program/system/note/note.css"
   }
 ]

@@ -190,11 +190,18 @@ define(["app", "moment",'text!config/config.json'], function (app, moment,info) 
             restrict : 'A',
             scope : {},
             link : function($scope, element, attrs) {
-                var winowHeight = $window.innerHeight; //获取窗口高度
-                var headerHeight = 50;
-                var footerHeight = 0;
-                element.css('min-height',
-                    (winowHeight - headerHeight - footerHeight) + 'px');
+                element.css('height',
+                    ($window.innerHeight-44) + 'px');
+            }
+        };
+    }).directive('specialHeight',function ($window) {
+        return {
+            restrict : 'A',
+            scope : {},
+            link : function($scope, element, attrs) {
+                var winowWeight = $window.innerWidth; //获取窗口宽度
+                element.css('height',
+                    (winowWeight * 0.47) + 'px');
             }
         };
     }).directive('repeatFinish', function () {
@@ -208,7 +215,37 @@ define(["app", "moment",'text!config/config.json'], function (app, moment,info) 
                 }
             }
         }
-    }).factory('authInterceptor', function($rootScope){
+    }).directive('contenteditable', ['$sce', function($sce) {
+        return {
+            restrict: 'A', // only activate on element attribute
+            require: '?ngModel', // get a hold of NgModelController
+            link: function(scope, element, attrs, ngModel) {
+                if (!ngModel) return; // do nothing if no ng-model
+
+                // Specify how UI should be updated
+                ngModel.$render = function() {
+                    element.html($sce.getTrustedHtml(ngModel.$viewValue || ''));
+                };
+
+                // Listen for change events to enable binding
+                element.on('blur keyup change', function() {
+                    scope.$evalAsync(read);
+                });
+                read(); // initialize
+
+                // Write data to the model
+                function read() {
+                    var html = element.html();
+                    // When we clear the content editable the browser leaves a <br> behind
+                    // If strip-br attribute is provided then we strip this out
+                    if ( attrs.stripBr && html == '<br>' ) {
+                        html = '';
+                    }
+                    ngModel.$setViewValue(html);
+                }
+            }
+        };
+    }]).factory('authInterceptor', function($rootScope){
         return {
             request: function(config){
                 config.headers = config.headers || {};
