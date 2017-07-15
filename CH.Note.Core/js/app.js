@@ -2,15 +2,15 @@
  * Created by owenc on 2017/5/8.
  */
 var requirePlugin = [
-    "angular", "angularAMD", "moment",
+    "angular", "angularAMD", "moment","ionic",
     //"angular-material",
     "angular-material-lite", "angular-swipe", "angular-animate",
     "angular-touch", "angular-ui-router", "angular-css", "angular-translate",
-    "angular-sanitize", "semantic", "angular-file-upload", "angular-cookies"
+    "angular-sanitize", "semantic", "angular-file-upload", "angular-cookies","ionic-angular"
 ];
 var model = [
     "ui.router", "pascalprecht.translate", "angularCSS", "ngMaterialLite",
-    "swipe", "ngAnimate", "ngSanitize", "ngTouch", "angularFileUpload", "ngCookies"
+    "swipe", "ngAnimate", "ngSanitize", "ngTouch", "angularFileUpload", "ngCookies","ionic"
 ];
 if(window.cordova){
     //APP 版本
@@ -19,7 +19,7 @@ if(window.cordova){
     model.push("ngScrollbar");
 }
 define(requirePlugin,
-    function (angular, angularAMD, moment, d3) {
+    function (angular, angularAMD, moment, ionic,d3) {
         'use strict';
         return angular.module("app",model);
     }

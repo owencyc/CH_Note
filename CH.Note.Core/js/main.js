@@ -43,7 +43,9 @@ require.config({
         "jquery": "plugins/jQuery/jquery-2.2.4.min",
         //semantic
         "semantic":"plugins/semantic/semantic.min",
-
+// ionic
+        "ionic": "plugins/ionic/js/ionic.min.1.2.4",
+        "ionic-angular": "plugins/ionic/js/ionic-angular.min.1.2.4",
         //angular-cookies
         "angular-cookies": "plugins/angular-cookies/angular-cookies.min",
         //ng-scrollbar
@@ -94,8 +96,10 @@ require.config({
         //angular-file-upload
         "angular-file-upload": ["angular"],
         //ng-scrollbar
-        "ng-scrollbar":["angular","angular-sanitize"]
-        //"angular-nice-bar":["angular"]
+        "ng-scrollbar":["angular","angular-sanitize"],
+        // ionic
+        "ionic": { exports: "ionic" },
+        "ionic-angular": ["ionic", "angular", "angular-animate", "angular-sanitize", "angular-resource"]
 
     },
     waitSeconds: 15,

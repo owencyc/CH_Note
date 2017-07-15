@@ -16,34 +16,14 @@ define(['app', 'angularAMD', 'text!config/program.json', 'angular-ui-router', 'l
                 controllerUrl: "program/login/login.js",
                 css          : "program/login/login.css"
             }))
-            .state("test", angularAMD.route({
-                url          : "/test",
+            .state("home", angularAMD.route({
+                url          : "/home",
                 params       : {
                     "data":{}
                 },
-                templateUrl  : "program/system/test/test.html",
-                controllerUrl: "program/system/test/test.js"
-            }))
-            .state("navigation", angularAMD.route({
-                url: "/navigation",
-                params       : {},
-                templateUrl: "program/system/navigation/navigation.html",
-                controllerUrl: "program/system/navigation/navigation.js",
-                css: "program/system/navigation/navigation.css"
-            }))
-            .state("navigation.program", angularAMD.route({
-                url: "/program",
-                params       : {type:''},
-                templateUrl  : "program/Courses/courseMaster.html",
-                controllerUrl: "program/Courses/courseMaster.js",
-                css          : ["program/Courses/courseMaster.css","program/system/navigation/navigation.css"]
-            }))
-            .state("navigation.notice", angularAMD.route({
-                url: "/notice",
-                params: { type: '' },
-                templateUrl: "program/notice/notice.html",
-                controllerUrl: "program/notice/notice.js",
-                css: ["program/notice/notice.css","program/system/navigation/navigation.css"]
+                templateUrl  : "program/system/home/home.html",
+                controllerUrl: "program/system/home/home.js",
+                css          : "program/system/home/home.css"
             }));
         $urlRouterProvider.otherwise('/login');
         program = JSON.parse(program);
