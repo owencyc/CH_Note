@@ -14,6 +14,10 @@ define([
         var $html, onDeviceReady = function () {
             angularAMD.bootstrap(app);
         };
+        if (document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1) {
+            // URL: Running in Cordova/PhoneGap
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
         if (typeof cordova === 'undefined') {
             //網頁時的啟動
             $html = angular.element(document.getElementsByTagName('html')[0]);

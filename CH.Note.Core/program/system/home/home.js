@@ -2,8 +2,8 @@
  * Created by owenc on 2017/7/15.
  */
 define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,noteList) {
-    return ["$scope", "$filter", "$state", "$rootScope","$ionicSideMenuDelegate",
-        function ($scope, $filter, $state, $rootScope,$ionicSideMenuDelegate) {
+    return ["$scope", "$filter", "$state", "$rootScope","$ionicSideMenuDelegate","$ionicScrollDelegate","$timeout","$ionicViewSwitcher",
+        function ($scope, $filter, $state, $rootScope,$ionicSideMenuDelegate,$ionicScrollDelegate,$timeout,$ionicViewSwitcher) {
             $scope.init=function(){
                 $scope.toggleLeft = function() {
                     $ionicSideMenuDelegate.toggleLeft();
@@ -42,7 +42,14 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
             }
             $scope.addNote=function(){
                 $rootScope.changeProgram("newnote");
+                $ionicViewSwitcher.nextDirection("forward");
             }
+            $scope.refreshScroll=function(){
+                //console.log("事件");
+                $ionicScrollDelegate.resize();
+
+            }
+
 
         }]
 })

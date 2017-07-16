@@ -9,13 +9,7 @@ define(['app', 'angularAMD', 'text!config/program.json', 'angular-ui-router', 'l
 
         //Setting System Router
         $stateProvider
-            .state("login", angularAMD.route({
-                url          : "/login",
-                params       : {},
-                templateUrl  : "program/login/login.html",
-                controllerUrl: "program/login/login.js",
-                css          : "program/login/login.css"
-            }))
+
             .state("home", angularAMD.route({
                 url          : "/home",
                 params       : {
@@ -25,7 +19,7 @@ define(['app', 'angularAMD', 'text!config/program.json', 'angular-ui-router', 'l
                 controllerUrl: "program/system/home/home.js",
                 css          : "program/system/home/home.css"
             }));
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home');
         program = JSON.parse(program);
         angular.forEach(program,function(value, key){
             var state = angularAMD.route(value);

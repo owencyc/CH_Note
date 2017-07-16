@@ -185,6 +185,15 @@ define(["app", "moment",'text!config/config.json'], function (app, moment,info) 
         }
 
 
+    }).directive('minHeight',function ($window) {
+        return {
+            restrict : 'A',
+            scope : {},
+            link : function($scope, element, attrs) {
+                element.css('min-height',
+                    ($window.innerHeight-44) + 'px');
+            }
+        };
     }).directive('autoHeight',function ($window) {
         return {
             restrict : 'A',
@@ -262,6 +271,24 @@ define(["app", "moment",'text!config/config.json'], function (app, moment,info) 
         };
     }).config(['$httpProvider', function ($httpProvider, $rootScope) {
         $httpProvider.interceptors.push('authInterceptor');
-    }])
+    }]).filter('cut', function () {
+        return function (value, wordwise, max, tail) {
+            if (!value) return '';
+
+            max = parseInt(max, 10);
+            if (!max) return value;
+            if (value.length <= max) return value;
+
+            value = value.substr(0, max);
+            if (wordwise) {
+                var lastspace = value.length-1;
+                if (lastspace != -1) {
+                    value = value.substr(0, lastspace);
+                }
+            }
+
+            return value + (tail || ' …');
+        };
+    })
     ;
 })

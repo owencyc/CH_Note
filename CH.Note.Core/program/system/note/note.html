@@ -1,4 +1,4 @@
-<div ng-init="init()">
+<div ng-init="init()" class="note animated bounceInUp">
     <ion-header-bar align-title="left" class="bar-stable note-bar">
         <div class="buttons">
             <button class="button button-icon icon ion-chevron-left" ng-click="back()"></button>
@@ -8,10 +8,10 @@
             <button class="button button-icon icon ion-checkmark-round" ng-click="submit()"></button>
         </div>
     </ion-header-bar>
-    <ion-content>
+    <ion-content class="note-content">
 
         <form name="myForm">
-            <div contenteditable class="note-edit" ng-model="note.content" strip-br="true" required>
+            <div contenteditable class="note-edit"  ng-model="note.content" strip-br="true" required>
 
             </div>
             <hr>

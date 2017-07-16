@@ -5,7 +5,7 @@
   "back_color":"yellow"
 },
   {
-    "content":"我们可以在容器当中内嵌列表，列表不会显示完整的宽度。内嵌列表的样式为：list list-inset，与常规列表区别",
+    "content":"我们可以在容器当中内嵌列表，列表不会显示完整的宽度。内嵌列表的样式为：list，与常规列表区别 list-inset",
     "create_time":"2017/07/13 12:11:11",
     "revise_time":"2017/07/13 12:11:11",
     "back_color":"green"
@@ -21,6 +21,24 @@
     "create_time":"2017/07/13 12:11:11",
     "revise_time":"2017/07/13 12:11:11",
     "back_color":"blue"
+  },
+  {
+    "content":"我们可以在容器与常规列表区别",
+    "create_time":"2017/07/13 12:11:11",
+    "revise_time":"2017/07/13 12:11:11",
+    "back_color":"gray"
+  },
+  {
+    "content":"我们可以在容器当中内示完整的别",
+    "create_time":"2017/07/13 12:11:11",
+    "revise_time":"2017/07/13 12:11:11",
+    "back_color":"red"
+  },
+  {
+    "content":"我们可式为：list list-inset，与常规列表区别",
+    "create_time":"2017/07/13 12:11:11",
+    "revise_time":"2017/07/13 12:11:11",
+    "back_color":"yellow"
   },
   {
     "content":"我们可以在容器与常规列表区别",

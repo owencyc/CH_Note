@@ -1,4 +1,4 @@
-<ion-side-menus ng-init="init()">
+<ion-side-menus ng-init="init()" class="home animated fadeIn">
     <!-- 中间内容 -->
     <ion-side-menu-content>
         <ion-header-bar align-title="center" class="home-bar">
@@ -9,26 +9,20 @@
             <h1 class="title home_title">便签</h1>
 
         </ion-header-bar>
-
-        <ion-content class="home-container" scroll="false">
-            <ion-scroll direction="y" style="height: 100%">
-                    <div class="ui two column card-container">
-                        <div class="row card-row" ng-repeat="row in notes track by $index ">
-                            <div class="column card-single" special-height ng-repeat="note in row.data track by $index " ng-class="'card_'+note.back_color">
-                                <div class="content">
-                                    {{note.content}}
-                                </div>
-                                <div class="extra content">
-                                    <span><i class="icon ion-clock"></i>{{note.revise_time}} </span>
-                                </div>
-                            </div>
+        <i class="icon huge orange ion-android-add-circle icon-note-add" ng-click="addNote()"></i>
+        <ion-content class="home-container">
+            <div class="ui two column card-container">
+                <div class="row card-row own-list-animation" ng-repeat="row in notes track by $index " >
+                    <div class="column card-single" special-height ng-repeat="note in row.data track by $index " ng-class="'card_'+note.back_color" >
+                        <div class="content">
+                            {{note.content |  cut:true:45:'...' }}
+                        </div>
+                        <div class="extra content">
+                            <span><i class="icon ion-clock"></i>{{note.revise_time}} </span>
                         </div>
                     </div>
-                </ion-scroll>
-
-
-            <i class="icon huge orange ion-android-add-circle icon-note-add" ng-click="addNote()"></i>
-
+                </div>
+             </div>
         </ion-content>
      </ion-side-menu-content>
 

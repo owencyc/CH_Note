@@ -6,11 +6,11 @@ var requirePlugin = [
     //"angular-material",
     "angular-material-lite", "angular-swipe", "angular-animate",
     "angular-touch", "angular-ui-router", "angular-css", "angular-translate",
-    "angular-sanitize", "semantic", "angular-file-upload", "angular-cookies","ionic-angular"
+    "angular-sanitize", "semantic", "angular-file-upload", "angular-cookies","ionic-angular","angular-animate","ngCordova"
 ];
 var model = [
     "ui.router", "pascalprecht.translate", "angularCSS", "ngMaterialLite",
-    "swipe", "ngAnimate", "ngSanitize", "ngTouch", "angularFileUpload", "ngCookies","ionic"
+    "swipe", "ngAnimate", "ngSanitize", "ngTouch", "angularFileUpload", "ngCookies","ionic","ngAnimate","ngCordova"
 ];
 if(window.cordova){
     //APP 版本

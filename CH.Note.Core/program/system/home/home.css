@@ -1,5 +1,8 @@
+
+
 .home-container{
     background-color: #F7EED6;
+
 }
 .home-bar{
     background-color: #F7EED6;
@@ -29,10 +32,12 @@
     margin: 1%;
     width:48%;
     position: relative;
+    font-size: 18px;
 }
 .card-single .extra{
     position: absolute;
     bottom: 0;
+    font-size: 14px;
 }
 .card_yellow{
     background-color: #FFD700;
@@ -52,7 +57,8 @@
 .icon-note-add{
     position: fixed;
     right: 8%;
-    bottom:5%
+    bottom:5%;
+    z-index:9999;
 }
 .parkScroll{
     height: 100%;

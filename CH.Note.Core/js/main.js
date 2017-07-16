@@ -52,6 +52,8 @@ require.config({
         "ng-scrollbar": "plugins/ng-scrollbar/dist/ng-scrollbar",
         //angular-file-upload
         "angular-file-upload": "plugins/angular-file-upload/dist/angular-file-upload.min",
+        //ngCordova
+        "ngCordova":"plugins/ng-cordova/ng-cordova.min",
         //bootstrap
         "bootstrap": "plugins/bootstrap/bootstrap.min",
         'text':   'plugins/requirejs/text',
@@ -99,7 +101,10 @@ require.config({
         "ng-scrollbar":["angular","angular-sanitize"],
         // ionic
         "ionic": { exports: "ionic" },
-        "ionic-angular": ["ionic", "angular", "angular-animate", "angular-sanitize", "angular-resource"]
+        "ionic-angular": ["ionic", "angular", "angular-animate", "angular-sanitize", "angular-resource"],
+        //ngCordova
+        "ngCordova":["angular"],
+        "cordova":{exports: 'cordova'},
 
     },
     waitSeconds: 15,
