@@ -57,18 +57,27 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
                     tx.executeSql('CREATE TABLE IF NOT EXISTS DemoTable (time, content)');
                     tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', [$scope.title, $scope.note.content]);
                 }, function(error) {
-                    alert('Transaction ERROR: ' + error.message);
+					
+						 var alertPopup = $ionicPopup.alert({
+						   title: '错误!',
+						   template: '保存失败：'+error.message,
+						   okText:'好吧...'
+						 });
+						 alertPopup.then(function(res) {
+						   console.log('保存失败');
+						 });
+					
                 }, function() {
-                    alert('Populated database OK');
+                    $rootScope.changeProgram("home",true);
                 });
 
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT count(*) AS mycount FROM DemoTable', [], function(tx, rs) {
-                        alert('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
-                    }, function(tx, error) {
-                        alert('SELECT error: ' + error.message);
-                    });
-                });
+                //db.transaction(function(tx) {
+                //    tx.executeSql('SELECT count(*) AS mycount FROM DemoTable', [], function(tx, rs) {
+                //        alert('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
+                //    }, function(tx, error) {
+                //        alert('SELECT error: ' + error.message);
+                //    });
+                //});
 
             }
         }]
