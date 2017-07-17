@@ -52,11 +52,12 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
             };
             $scope.submit=function(){
                 var revise_time=new moment().format('YYYY/MM/DD HH:mm');
+                var noteId = new Date().getTime();
                 console.log($scope.note.content);
                 var db = $cordovaSQLite.openDB({ name: "CH_NOTE.db", location: 'default' });
                 db.transaction(function(tx) {
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS tblnote (create_time, content,revise_time,color)');
-                    tx.executeSql('INSERT INTO tblnote VALUES (?,?,?,?)', [revise_time, $scope.note.content,revise_time,'blue']);
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS tblnote (noteId,create_time, content,revise_time,color)');
+                    tx.executeSql('INSERT INTO tblnote VALUES (?,?,?,?,?)', [noteId,revise_time, $scope.note.content,revise_time,'blue']);
                 }, function(error) {
 					
 						 var alertPopup = $ionicPopup.alert({

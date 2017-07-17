@@ -21,6 +21,7 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
                         console.log('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
                         for(var i=0;i<rs.rows.length;i++){
                             var item={
+                            	noteId:rs.rows.item(i).noteId,
                                 content:rs.rows.item(i).content,
                                 create_time:rs.rows.item(i).create_time,
                                 revise_time:rs.rows.item(i).revise_time,
@@ -31,11 +32,13 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
                         for(var i=0;i<list.length;i+=2){
                             var row={data:[]}
                             var temp={
+                            	noteId:"",
                                 content:"",
                                 create_time:"",
                                 revise_time:"",
                                 back_color:""
                             }
+                            temp.noteId=list[i].noteId;
                             temp.content=list[i].content;
                             temp.create_time=list[i].create_time;
                             temp.revise_time=list[i].revise_time;
@@ -43,11 +46,13 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
                             row.data.push(temp);
                             if(i+1<list.length) {
                                 temp={
+                                	noteId:"",
                                     content:"",
                                     create_time:"",
                                     revise_time:"",
                                     back_color:""
                                 }
+                                temp.noteId = list[i + 1].noteId;
                                 temp.content = list[i + 1].content;
                                 temp.create_time = list[i + 1].create_time;
                                 temp.revise_time = list[i + 1].revise_time;
