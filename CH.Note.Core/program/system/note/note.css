@@ -14,5 +14,9 @@
 .note-content{
     min-height: calc(100% - 44px);
     background-color: #e0f2f1;
-    -webkit-user-select: auto
+    -webkit-user-select: auto;
+	    padding: 8px;
+}
+.footer-icon{
+	color:#444!important;
 }

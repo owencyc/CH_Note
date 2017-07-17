@@ -51,11 +51,12 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
                 }
             };
             $scope.submit=function(){
+                var revise_time=new moment().format('YYYY/MM/DD HH:mm');
                 console.log($scope.note.content);
-                var db = $cordovaSQLite.openDB({ name: "note.db", location: 'default' });
+                var db = $cordovaSQLite.openDB({ name: "CH_NOTE.db", location: 'default' });
                 db.transaction(function(tx) {
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS DemoTable (time, content)');
-                    tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', [$scope.title, $scope.note.content]);
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS tblnote (create_time, content,revise_time,color)');
+                    tx.executeSql('INSERT INTO tblnote VALUES (?,?,?,?)', [revise_time, $scope.note.content,revise_time,'blue']);
                 }, function(error) {
 					
 						 var alertPopup = $ionicPopup.alert({
@@ -68,7 +69,15 @@ define(["moment","ionic","text!config/noteList.json"], function (moment,ionic,no
 						 });
 					
                 }, function() {
-                    $rootScope.changeProgram("home",true);
+                    var alertPopup = $ionicPopup.alert({
+                        title: '亲爱的',
+                        template: '保存成功咯！',
+                        okText:'好的'
+                    });
+                    alertPopup.then(function(res) {
+                        $rootScope.changeProgram("home",true);
+                    });
+
                 });
 
                 //db.transaction(function(tx) {

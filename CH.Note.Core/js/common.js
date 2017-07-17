@@ -191,7 +191,7 @@ define(["app", "moment",'text!config/config.json'], function (app, moment,info) 
             scope : {},
             link : function($scope, element, attrs) {
                 element.css('min-height',
-                    ($window.innerHeight-44) + 'px');
+                    ($window.innerHeight-88) + 'px');
             }
         };
     }).directive('autoHeight',function ($window) {
